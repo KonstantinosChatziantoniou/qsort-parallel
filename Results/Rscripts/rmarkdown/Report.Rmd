@@ -7,21 +7,22 @@ institution: "Aristotle Univerisity of Thessaloniki"
 output:
   pdf_document: 
     toc: no
+  urlcolor: blue
+  linkcolor: blue
   html_document:
 header-includes:
   - \usepackage{listings}
   - \usepackage{multicol}
   - \usepackage{fancyhdr}
   - \usepackage{endnotes}
+  - \usepackage{color}
   - \fancyhead[CO,CE]{}
   - \fancyfoot[CO,CE]{Auth}
   - \usepackage[bottom]{footmisc}
   - \fancyfoot[LE,RO]{\thepage}
-  - \renewcommand{\thesection}{\Alph{section}}
 footer: sth
 ---
 ```{r echo=FALSE , include=FALSE}
-  knitr::opts_chunk$set(setwd('/home/kotsarelos/Documents/Repos/qsort-parellel/Results/Rscripts/rmarkdown'))
   knitr::read_chunk('../data_scripts/plots_for_n.R')
 ```
 \vspace*{2\baselineskip} 
@@ -36,6 +37,8 @@ footer: sth
 ```{r child='code_presentation.Rmd'}
 ```
 
+```{r child='code_link.Rmd'}
+```
 ```{r child= 'opt_n_for_par.Rmd'}
 ```
 
@@ -46,6 +49,5 @@ footer: sth
 ```
 \vspace*{3\baselineskip} 
 \markright{1st assignement}
-\newpage
 ```{r child= 'explainations.Rmd'}
 ```

@@ -8,6 +8,6 @@ knitr::read_chunk('../data_scripts/plots_for_n_final.R')
 <<plotbarN>>
 ```
 
- *Figure 3.1* shows that for `n` larger than `19`, there is a noticable difference in speed, between the parallel and the sequencial programms. Also, the growth rate of the sequentials is `O(nlogn)` , while the parallel's rate of growth is obviously less.
+ *Figure 3.1* shows that for `n` larger than `19`, there is a noticable difference in speed, between the parallel and the sequencial programms. Also, the growth rate of the sequentials is `O(nlogn)` , while the parallel's rate of growth is obviously less. The stdlib qsort is slower , evan than the sequnetial, propably because of the use of pointer arguments and pointer to function.
  
  From *Figure 3.2* it is apparent that all four programms have the same speed for various `n`, with Cilk being the winner by a very narrow margin.
