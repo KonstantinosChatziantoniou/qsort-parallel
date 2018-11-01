@@ -1,0 +1,11 @@
+##Code Explanation
+Each recursive call of quicksort, uses a different part of the array.This means, those two calls can be done in parallel. The parent thread will spawn a child thread to do the first call, then it will continue doing the second call and wait for the child.  
+
+In `cilk` and `openmp` it is straightforward how to parallelize those calls:
+
+  + `Cilk`:  I used the `cilk_spawn` keyword in front the first call. I can set the number of threads(cilk workers) by using the cilk api for linux (`cilk_set_params("nworkers") , char* n);`)
+  + `Openmp`: I used `#pragma omp parallel` and `#pragma omp single` directives,to call the entry point for qsort, and `#pragma omp task` for the first recursive call. I can set the number of the `num_threads(n)` parameter in the parallel directive.
+  
+For `pthread`, to parallelise the recursive calls, I used the `pthread_create` function for the first call, normally call the second and wait for the spawned thread to join. In `pthread` there is no automatic way to control the maximum number of threads. Instead, I created a global array of `pthread_t` (tid) and one of `int`(availableThreads). When I want to create a thread, I call the `findAvailableThread` function, which checks for a `0` in availableThreads array(1 means pthread_t[index] is in use) and returns the `index` when one is found. If all are reserved it returns -1. When a thread joins, I call the `releaseThread()` function to make `availableThreads[index]` = 0 , so it can be reused. Both those function lock a mutex before changing the array.
+
+The `pthread.9000` version, also parallelises the `partion`. The parent thread does partition for the first half and the spawned thread for the other half of the array. They wait for the other to complete the partition,do the rest of the swaps and wake it to continue with the recursive calls.

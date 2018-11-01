@@ -1,0 +1,13 @@
+## Final Comparison
+Since the optimal number of maximum threads and number of elements for parallelisation have been determined, it's time to compare the programms, sequential and parallel, for different problem sizes.
+*(The yellow line is `nlogn`)*
+```{r echo = FALSE}
+knitr::read_chunk('../data_scripts/plots_for_n_final.R')
+```
+```{r echo=FALSE}
+<<plotbarN>>
+```
+
+ *Figure 3.1* shows that for `n` larger than `19`, there is a noticable difference in speed, between the parallel and the sequencial programms. Also, the growth rate of the sequentials is `O(nlogn)` , while the parallel's rate of growth is obviously less.
+ 
+ From *Figure 3.2* it is apparent that all four programms have the same speed for various `n`, with Cilk being the winner by a very narrow margin.

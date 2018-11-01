@@ -1,0 +1,51 @@
+---
+title: "Parallel and Distrubuted Computer Systems"
+subtitle: "First Assignment"
+author: "Konstantinos Chatziantoniou 8941"
+date: "1/11/2018"
+institution: "Aristotle Univerisity of Thessaloniki"
+output:
+  pdf_document: 
+    toc: no
+  html_document:
+header-includes:
+  - \usepackage{listings}
+  - \usepackage{multicol}
+  - \usepackage{fancyhdr}
+  - \usepackage{endnotes}
+  - \fancyhead[CO,CE]{}
+  - \fancyfoot[CO,CE]{Auth}
+  - \usepackage[bottom]{footmisc}
+  - \fancyfoot[LE,RO]{\thepage}
+  - \renewcommand{\thesection}{\Alph{section}}
+footer: sth
+---
+```{r echo=FALSE , include=FALSE}
+  knitr::opts_chunk$set(setwd('/home/kotsarelos/Documents/Repos/qsort-parellel/Results/Rscripts/rmarkdown'))
+  knitr::read_chunk('../data_scripts/plots_for_n.R')
+```
+\vspace*{2\baselineskip} 
+
+
+```{r child = 'aim_of_the_ex.Rmd'}
+```
+\vspace*{2\baselineskip} 
+```{r child= 'hardware_specs.Rmd'}
+```
+\vspace*{2\baselineskip} 
+```{r child='code_presentation.Rmd'}
+```
+
+```{r child= 'opt_n_for_par.Rmd'}
+```
+
+```{r child= 'opt_thread_num.Rmd'}
+```
+
+```{r child='final_comparison.Rmd'}
+```
+\vspace*{3\baselineskip} 
+\markright{1st assignement}
+\newpage
+```{r child= 'explainations.Rmd'}
+```

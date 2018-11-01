@@ -1,0 +1,15 @@
+##Hardware Specifications
+The code was ran on a HP laptop with the following specs:
+
+  + CPU: i7 7500u (2 cores/ 4 threads)
+  + RAM: 8gb ddr4
+  + OS: ubuntu 18.04
+  + compiler: gcc (with -Ofast flag)   (icc for cilk)
+  
+<br>
+<br>
+<br>
+<br><br>
+<br>
+<br>
+<br>

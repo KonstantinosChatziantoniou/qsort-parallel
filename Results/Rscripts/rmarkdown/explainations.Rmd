@@ -1,0 +1,13 @@
+###Misc
+
+  1. Cilk had noticably better performance (25% faster) when compiled with icc instead of gcc.
+  2. In both pthread programms, I create two functions; one that returns `void*` and has `void*` arguments(the `void*` is casted as `pth_input`), and another that returns `void` and has `pth_input` arguments. Those two function do exactly the same. When I wrote the programm with just the function with the pointers, the program ran much slower (x1.75 slower).
+  3. Sometimes of the 'noise' of the OS affects a lot the time of the programms.Occasionally 10-20% increase in time has been noticed.
+  
+  The following plots show the combination of max threads and min N for parallelisation for all parallel programs.
+```{r echo=FALSE}
+knitr::read_chunk('../data_scripts/plots_extra.R')
+```
+```{r echo=FALSE, message=FALSE, fig.height=6 ,fig.width==22}
+<<plotextra>>
+```

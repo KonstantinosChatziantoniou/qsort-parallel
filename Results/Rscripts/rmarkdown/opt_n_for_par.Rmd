@@ -1,0 +1,16 @@
+##Optimal number of elements for parallelisation(grain size)
+Creating and terminating a thread introduces some overhead. When the problem size is small, this overhead may make the parallel programm slower than the sequential. So, an optimal number of elements `n` should be found\footnote{Number of elements `n` is different for each machine.}, below which sequential approach will be used.
+
+```{r echo=FALSE}
+  knitr::read_chunk('../data_scripts/plot_for_minN.R')
+```
+```{r echo = FALSE , fig.height= 3}
+<<plotbarminN>>
+```
+
+From *figure 1* it is apparent that `cilk` and `openmp` are not affected much by small grain size, propably because of the automatic optimisation. Pthread ,though, is at least 10% slower for low grain size( n < 13 ). All parallel programms are at least 8% slower for large grain size(n > 20). As optimal minimum number for parallelisation we will choose:
+
+  + Cilk  $n = 13$
+  + Openmp $n = 14$
+  + Pthread $n = 18$
+  + Pthread.9000 $n = 17$

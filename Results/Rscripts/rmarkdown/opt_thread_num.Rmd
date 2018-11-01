@@ -1,0 +1,19 @@
+##Optimal number of threads
+The benchmarks were run on a 2-core CPU with hyperthreading(4 physical threads). The impact on speed of creating more threads than the physical threads is uncertain. It could be negative, because of the overhead of thread context switching, or positive(e.g. when a thread is 'sleeping' or waiting to lock a mutex). In order to determine the optimal number of threads\footnote{optimal number of threads is different for each machine}, testing is required.\footnote{Cilk's workers cannot be more than 64.}
+<br>
+<br>
+<br>
+```{r echo=FALSE}
+knitr::read_chunk('../data_scripts/plots_for_p.R')
+```
+```{r echo=FALSE , fig.height=3.2}
+<<plotbarP>>
+```
+
+
+From *figure 2* , it seems that:
+
+  + cilk works better for, $n \in [2,3] \Rightarrow p \in [4,8]$
+  + openmp works better for $n > 2, \Rightarrow p > 4$
+  + pthread works better for $n > 5, \Rightarrow p > 32$
+  + pthread.9000 works better for, $n > 4, \Rightarrow p > 8$

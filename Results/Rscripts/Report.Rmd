@@ -1,0 +1,129 @@
+---
+title: "Parallel and Distrubuted Computer Systems"
+subtitle: "First Assignment"
+author: "Konstantinos Chatziantoniou 8941"
+date: "1/11/2018"
+institution: "Aristotle Univerisity of Thessaloniki"
+output:
+  pdf_document: default
+  html_document:
+    df_print: paged
+header-includes:
+  - \usepackage{listings}
+  - \usepackage{multicol}
+  - \usepackage{fancyhdr}
+  - \pagestyle{fancy}
+  - \fancyhead[CO,CE]{}
+  - \fancyfoot[CO,CE]{}
+  - \fancyfoot[LE,RO]{\thepage}
+  - \renewcommand{\thesection}{\Alph{section}}
+footer: sth
+---
+<br>
+<br>
+
+\centerline{Aristotle Univerisity of Thessaloniki} 
+  <br/>
+  <br/>
+\centerline{\includegraphics[width=40mm,height=40mm, scale=1]{./auth.png}}
+
+###Aim of the assignment:
+
+Create three versions of parallel programs from given code, using
+
+1. pthreads
+2. cilk
+3. openmp
+
+which use the `Quicksort` algorithm, to sort an array of `N` integers in ascending order.  
+<br/>
+<br/>
+  
+    
+The programs should:  
+
++ Ask the user for `q` and `p` integers
++ Use `p` threads
++ Sort an array of `q` random integers, and capture the time required
++ Check the correctness of the result
++ Work correctly
+    * for $2^{p}$ threads, where $p = [1:8]$
+    * for $2^{q}$ integers, where $q = [12:24]$
+    
+<br/>
+```{Rcpp, eval = FALSE}
+int test(int *a, int n) {
+  int pass = 1;
+  for(int i = 0; i < n-1; i++){
+    if(a[i] > a[i+1]){
+      pass = 0;
+    }
+  }
+  return pass;  
+}
+```
+\lstset{frame=tb,
+  linewidth=5.4cm,
+  language=C,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3}
+\begin{lstlisting}
+int test(int *a, int n) {
+  int pass = 1;
+  for(int i = 0; i < n-1; i++){
+    if(a[i] > a[i+1]){
+      pass = 0;
+    }
+  }
+  return pass;
+}
+\end{lstlisting}
+Asd
+
+\pagebreak
+\lstset{frame=tb,
+  linewidth=5.4cm,
+  language=C,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3}
+
+
+\begin{multicols}{2}
+
+code:
+\begin{lstlisting}
+int test(int *a, int n) {
+  int pass = 1;
+  for(int i = 0; i < n-1; i++){
+    if(a[i] > a[i+1]){
+      pass = 0;
+    }
+  }
+  return pass;
+}
+\end{lstlisting}
+\columnbreak
+This is the explanation
+\end{multicols}
