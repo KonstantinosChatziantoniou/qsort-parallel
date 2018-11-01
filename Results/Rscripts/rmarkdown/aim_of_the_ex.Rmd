@@ -1,5 +1,5 @@
 ##Aim of the assignement
-Three different versions of parallel programms have to be made, using:
+Three different versions of parallel programs have to be made, using:
 
   +   pthreads
   +   cilk
@@ -7,7 +7,7 @@ Three different versions of parallel programms have to be made, using:
   
 that implement the quicksort algorithm.  
 <br>
-The programms should check if the result is correct and work for $2^{p}$ threads where $p \in [1:8]$ and for $2^{n}$ elements to be sorted, where $n \in [12:24]$.  
+The programs should check if the result is correct and work for $2^{p}$ threads where $p \in [1:8]$ and for $2^{n}$ elements to be sorted, where $n \in [12:24]$.  
 `n` , `p` are defined by the user.  
 <br>
 Then, the speed of the sequential and the three parallel quicksort versions(and other implementations of them) will be compared, for different number of threads and elements.
