@@ -47,7 +47,9 @@ footer: sth
 
 ```{r child='final_comparison.Rmd'}
 ```
-\vspace*{3\baselineskip} 
-\markright{1st assignement}
+
+```{r child='diades.Rmd'}
+```
+
 ```{r child= 'explainations.Rmd'}
 ```

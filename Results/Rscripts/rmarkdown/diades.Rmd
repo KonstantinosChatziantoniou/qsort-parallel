@@ -1,0 +1,4 @@
+###Diades remote server
+
+The programs were also run on the diades server(4 cores with hyperthreading). The parallel programs, for $2^{24}$ elements and their optimal treads and grainsize , took approximately 0.42s , while the sequnetial took 2.5s (6x faster). This indicates tha multithreaded
+programs benefit more from more threads(diades) than singlethreaded performance(laptop). It also proves that the comparison results differ greatly for differnt systems.
